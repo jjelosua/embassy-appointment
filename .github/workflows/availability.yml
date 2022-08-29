@@ -2,7 +2,7 @@ name: Availability
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 9-23 * * *"
   workflow_dispatch:
 
 env:

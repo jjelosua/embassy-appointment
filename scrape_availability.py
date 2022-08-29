@@ -23,7 +23,7 @@ try:
     token= test[-1][:-2]
     payload={
         'CSRFToken': token,
-        'nMonth': '10',
+        'nMonth': '9',
         'nYear': '2022',
         'type': '1',
         'serviceType': 'AA',
@@ -34,7 +34,7 @@ try:
     table = soup.find('table',id="Table3")
     available_days = table.findAll('a')
     if available_days:
-        output = 'Septiembre: '
+        output = 'September: '
         for day in available_days:
             env_file = os.getenv('GITHUB_ENV')
             if day.string.startswith('2'):
