@@ -33,7 +33,6 @@ try:
     soup = BeautifulSoup(r2.content, 'html.parser')
     table = soup.find('table',id="Table3")
     available_days = table.findAll('a')
-    output
     if available_days:
         output = 'Septiembre: '
         for day in available_days:
