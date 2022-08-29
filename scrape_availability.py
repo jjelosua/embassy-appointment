@@ -23,7 +23,7 @@ try:
     token= test[-1][:-2]
     payload={
         'CSRFToken': token,
-        'nMonth': '9',
+        'nMonth': '10',
         'nYear': '2022',
         'type': '1',
         'serviceType': 'AA',
