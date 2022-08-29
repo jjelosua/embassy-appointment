@@ -23,7 +23,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Scraper
         run: echo ::set-output name=found::$(python scrape_availability.py)
-        id: scrape        
+        id: scrape   
+      - name: Debug
+        run: |
+          echo found is ${{steps.scrape.outputs.found}} 
+          echo SLOTS are ${{ env.SLOTS }}
       - name: Send mail
         if: steps.scrape.outputs.found == 1
         uses: dawidd6/action-send-mail@v3
