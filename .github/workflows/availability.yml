@@ -42,4 +42,3 @@ jobs:
           from: Automated Email
           ignore_cert: true
           secure: true
-          html_body: file://ppra.html
