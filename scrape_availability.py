@@ -34,14 +34,17 @@ try:
     table = soup.find('table',id="Table3")
     available_days = table.findAll('a')
     if available_days:
-        output = 'September: '
+        env_file = os.getenv('GITHUB_ENV')
+        output = ''
         for day in available_days:
-            env_file = os.getenv('GITHUB_ENV')
-            if day.string.startswith('2'):
-                output = output + day.string + ' '
-        with open(env_file, "a") as myfile:
-            myfile.write("SLOTS=%s" % (output))
-        print(1)
+            if day.string in ('22','27'):
+                output = day.string + ' '
+        if output:
+            with open(env_file, "a") as myfile:
+                myfile.write("SLOTS=%s" % (output))
+            print(1)
+        else:
+            print(0)
     else:
         print(0)
 
